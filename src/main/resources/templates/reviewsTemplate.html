@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>A List of All Available Reviews</title>
+</head>
+<body>
+    <header>
+       <h1>Album Reviews</h1>
+    </header>
+<main>
+    <figure>
+        <img src="images\legendspic.jpg" alt="legendspic">
+    </figure>
+    <ul>
+        <li th:each="review: ${reviewsModel}"><a th:href="@{/review(id=${review.id})}" th:text="${review.artistName}"></a></li>
+    </ul>
+</main>
+
+<footer>
+    <small>&copy My Soundtrack 2021</small>
+</footer>
+</body>
+</html>
